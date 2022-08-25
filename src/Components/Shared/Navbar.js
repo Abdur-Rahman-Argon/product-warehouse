@@ -24,7 +24,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div class="navbar bg-base-100 md:px-20">
+    <div class="navbar bg-base-100 md:px-20 ">
       <div class="flex-1 navbar-start">
         <a href="/" class="btn btn-ghost normal-case text-xl">
           Product Store House
