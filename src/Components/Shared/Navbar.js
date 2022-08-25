@@ -27,7 +27,7 @@ const Navbar = () => {
     <div class="navbar bg-base-100 md:px-20">
       <div class="flex-1 navbar-start">
         <a href="/" class="btn btn-ghost normal-case text-xl">
-          daisyUI
+          Product Store House
         </a>
       </div>
 
