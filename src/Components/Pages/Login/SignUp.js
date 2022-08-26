@@ -6,7 +6,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import SocialLogIn from "./SocialLogIn";
+import SocialLogin from "./SocialLogin";
 
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -130,7 +130,7 @@ const SignUp = () => {
       </div>
       <div class="divider">OR</div>
       <div>
-        <SocialLogIn></SocialLogIn>
+        <SocialLogin></SocialLogin>
       </div>
     </div>
   );
