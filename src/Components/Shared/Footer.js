@@ -5,7 +5,9 @@ const Footer = () => {
     <footer class="footer p-10 bg-slate-700 text-white ">
       <div className=" text-left">
         <div>
-          <h1 className=" text-xl font-semibold">Product Store House</h1>
+          <h1 className=" text-xl font-Extrabold title-style">
+            Product Store House
+          </h1>
         </div>
         <div>
           <h2 className=" text-[15px] font-semibold">

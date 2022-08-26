@@ -1,14 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+
+  const logOut = () => {
+    signOut(auth);
+  };
+
   const navberOption = (
     <>
       <li>
-        <a>Home</a>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <a>Inventory</a>
+        <Link to="/inventories">Inventories</Link>
       </li>
       <li>
         <a>ManageItems</a>
@@ -19,17 +28,27 @@ const Navbar = () => {
       <li>
         <a>AddNewItem</a>
       </li>
-      <li>
-        <Link to="/login">Login/Signup</Link>
-      </li>
+
+      {user ? (
+        <li>
+          <button onClick={logOut}>LogOut</button>
+        </li>
+      ) : (
+        <li>
+          <Link to="/login">Login/Signup</Link>
+        </li>
+      )}
     </>
   );
   return (
-    <div class="navbar bg-base-100 md:px-20 ">
+    <div class="navbar  md:px-20 cover ">
       <div class="flex-1 navbar-start">
-        <a href="/" class="btn btn-ghost normal-case text-xl">
-          Product Store House
-        </a>
+        <Link to="/" class="">
+          <h1 className="normal-case title-style text-2xl">
+            {" "}
+            Product Store House
+          </h1>
+        </Link>
       </div>
 
       <div class="md:flex navbar-end hidden">

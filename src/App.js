@@ -5,6 +5,8 @@ import Navbar from "./Components/Shared/Navbar";
 import Home from "./Components/Pages/Home/Home";
 import Login from "./Components/Pages/Login/Login";
 import SignUp from "./Components/Pages/Login/SignUp";
+import RequireAuth from "./Components/Shared/RequireAuth";
+import Inventories from "./Components/Pages/Inventories/Inventories";
 
 function App() {
   return (
@@ -13,6 +15,14 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route
+          path="/inventories"
+          element={
+            <RequireAuth>
+              <Inventories />
+            </RequireAuth>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
