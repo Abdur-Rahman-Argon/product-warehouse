@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const navberOption = (
@@ -7,7 +8,7 @@ const Navbar = () => {
         <a>Home</a>
       </li>
       <li>
-        <a>Items</a>
+        <a>Inventory</a>
       </li>
       <li>
         <a>ManageItems</a>
@@ -19,7 +20,7 @@ const Navbar = () => {
         <a>AddNewItem</a>
       </li>
       <li>
-        <a>Login/Signup</a>
+        <Link to="/login">Login/Signup</Link>
       </li>
     </>
   );
@@ -32,7 +33,9 @@ const Navbar = () => {
       </div>
 
       <div class="md:flex navbar-end hidden">
-        <ul class="menu menu-horizontal gap-1 p-0">{navberOption}</ul>
+        <ul class="menu menu-horizontal font-semibold gap-1 p-0">
+          {navberOption}
+        </ul>
       </div>
 
       <div class="navbar-end md:hidden">
