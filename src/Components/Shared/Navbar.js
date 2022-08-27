@@ -11,7 +11,7 @@ const Navbar = () => {
     signOut(auth);
   };
 
-  const navberOption = (
+  const navbarOption = (
     <>
       <li>
         <Link to="/">Home</Link>
@@ -41,19 +41,16 @@ const Navbar = () => {
     </>
   );
   return (
-    <div class="navbar  md:px-20 cover ">
+    <div class="navbar  md:px-20  bg-slate-700 text-white ">
       <div class="flex-1 navbar-start">
         <Link to="/" class="">
-          <h1 className="normal-case title-style text-2xl">
-            {" "}
-            Product Store House
-          </h1>
+          <h1 className="normal-case title-style text-2xl">P-Store House</h1>
         </Link>
       </div>
 
       <div class="md:flex navbar-end hidden">
         <ul class="menu menu-horizontal font-semibold gap-1 p-0">
-          {navberOption}
+          {navbarOption}
         </ul>
       </div>
 
@@ -78,7 +75,7 @@ const Navbar = () => {
             tabindex="9"
             class="dropdown-content menu p-4 shadow bg-base-100 rounded-box w-52"
           >
-            {navberOption}
+            {navbarOption}
           </ul>
         </div>
       </div>

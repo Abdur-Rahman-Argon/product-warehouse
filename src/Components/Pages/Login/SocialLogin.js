@@ -9,7 +9,7 @@ const SocialLogin = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from = location?.state?.from?.pathname;
+  const from = location?.state?.from?.pathname || "/";
 
   if (gUser) {
     navigate(from, { replace: true });
@@ -17,17 +17,17 @@ const SocialLogin = () => {
 
   const handleGoogleSignUp = async () => {
     signInWithGoogle();
-    // await console.log(gUser.user);
+
     const displayName = await gUser.user.displayName;
     const email = await gUser.user.email;
     const photoURL = await gUser.user.photoURL;
 
-    const user = {
+    const user = await {
       displayName,
       email,
       photoURL,
     };
-
+    // await console.log(gUser, user);
     // fetch("https://frozen-retreat-64301.herokuapp.com/user", {
     //   method: "POST",
     //   headers: {
@@ -48,7 +48,7 @@ const SocialLogin = () => {
         onClick={handleGoogleSignUp}
         className="btn w-full my-2 flex items-center justify-center gap-3 bg-indigo-600 text-white"
       >
-        <img src={""} alt="" className="w-6" /> SignUp with GooGle
+        <i class="fa-brands fa-google"></i> SignUp with GooGle
       </button>
       <button className="btn w-full my-2 flex items-center justify-center gap-3 bg-indigo-600 text-white">
         <i class="fa-brands fa-facebook-square text-2xl"></i> SignUp with
