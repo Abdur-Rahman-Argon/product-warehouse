@@ -20,7 +20,7 @@ const Home = () => {
       </section>
 
       <section className="my-10">
-        <h1 className=" text-3xl text-center title2 font-bold   px-5 my-5 lg:my-10 ">
+        <h1 className=" text-3xl text-center title2 font-bold my-5 lg:my-10 ">
           Our Services :
         </h1>
         <div>
