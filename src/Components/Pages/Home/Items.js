@@ -2,7 +2,7 @@ import React from "react";
 
 const Items = () => {
   return (
-    <div class="card w-96 glass">
+    <div class="card w-96 glass hover:shadow-2xl">
       <figure>
         <img src="https://placeimg.com/400/225/arch" alt="car!" />
       </figure>
