@@ -8,8 +8,8 @@ import icon5 from "./../../../images/icon5.png";
 const OurServices = () => {
   return (
     <div className="flex justify-around flex-wrap">
-      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-xl ">
-        <figure class="px-10 pt-10 ">
+      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-sm border-[1px] border-gray-100 ">
+        <figure class="px-10 pt-5 ">
           <img src={icon1} alt="Shoes" class="rounded-xl  w-[80px]" />
         </figure>
         <div class="text-center my-3">
@@ -17,21 +17,17 @@ const OurServices = () => {
         </div>
       </div>
 
-      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-xl">
-        <figure class="px-10 pt-10 w- ">
-          <img
-            src={icon2}
-            alt="Shoes"
-            class="rounded-xl  w-[80px] rounded-full"
-          />
+      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-sm border-[1px] border-gray-100">
+        <figure class="px-10 pt-5 w- ">
+          <img src={icon2} alt="Shoes" class="w-[80px] rounded-full" />
         </figure>
         <div class="text-center my-3">
           <h2 class=" text-sm font-semibold">TRACKING</h2>
         </div>
       </div>
 
-      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-xl">
-        <figure class="px-10 pt-10">
+      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-sm border-[1px] border-gray-100">
+        <figure class="px-10 pt-5 ">
           <img src={icon3} alt="Shoes" class="rounded-xl  w-[80px]" />
         </figure>
         <div class="text-center my-3">
@@ -39,8 +35,8 @@ const OurServices = () => {
         </div>
       </div>
 
-      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-xl">
-        <figure class="px-10 pt-10">
+      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-sm border-[1px] border-gray-100">
+        <figure class="px-10 pt-5 ">
           <img src={icon4} alt="Shoes" class="rounded-xl  w-[80px]" />
         </figure>
         <div class="text-center my-3">
@@ -48,8 +44,8 @@ const OurServices = () => {
         </div>
       </div>
 
-      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-xl">
-        <figure class="px-10 pt-10">
+      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-sm border-[1px] border-gray-100">
+        <figure class="px-10 pt-5 ">
           <img src={icon5} alt="Shoes" class="rounded-xl  w-[90px]" />
         </figure>
         <div class="text-center my-3">
