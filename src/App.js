@@ -7,6 +7,7 @@ import Login from "./Components/Pages/Login/Login";
 import SignUp from "./Components/Pages/Login/SignUp";
 import RequireAuth from "./Components/Shared/RequireAuth";
 import Inventories from "./Components/Pages/Inventories/Inventories";
+import NotFound from "./Components/Shared/NotFound";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer></Footer>
     </div>

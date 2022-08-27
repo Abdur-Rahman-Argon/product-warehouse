@@ -11,7 +11,7 @@ const Navbar = () => {
     signOut(auth);
   };
 
-  const navbarOption = (
+  const navbarOption1 = (
     <>
       <li>
         <Link to="/">Home</Link>
@@ -19,16 +19,24 @@ const Navbar = () => {
       <li>
         <Link to="/inventories">Inventories</Link>
       </li>
-      <li>
-        <a>ManageItems</a>
-      </li>
-      <li>
-        <a>MyItems</a>
-      </li>
-      <li>
-        <a>AddNewItem</a>
-      </li>
+      {user && (
+        <>
+          <li>
+            <Link to="/manageItems">ManageItems</Link>
+          </li>
+          <li>
+            <Link to="/myItems">MyItems</Link>
+          </li>
+          <li>
+            <Link to="/addNewItems">AddNewItem</Link>
+          </li>
+        </>
+      )}{" "}
+    </>
+  );
 
+  const navbarOption2 = (
+    <>
       {user ? (
         <li>
           <button onClick={logOut}>LogOut</button>
@@ -48,9 +56,14 @@ const Navbar = () => {
         </Link>
       </div>
 
+      {/* <div class="md:flex navbar-center hidden">
+        <ul class="menu menu-horizontal font-semibold gap-1 p-0"></ul>
+      </div> */}
+
       <div class="md:flex navbar-end hidden">
         <ul class="menu menu-horizontal font-semibold gap-1 p-0">
-          {navbarOption}
+          {navbarOption1}
+          {navbarOption2}
         </ul>
       </div>
 
@@ -73,9 +86,10 @@ const Navbar = () => {
           </label>
           <ul
             tabindex="9"
-            class="dropdown-content menu p-4 shadow bg-base-100 rounded-box w-52"
+            class="dropdown-content menu p-4 shadow bg-base-100 rounded-box w-52 text-gray-600 font-semibold"
           >
-            {navbarOption}
+            {navbarOption1}
+            {navbarOption2}
           </ul>
         </div>
       </div>
