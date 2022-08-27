@@ -22,6 +22,9 @@ const Navbar = () => {
       {user && (
         <>
           <li>
+            <Link to="/manageInventories">ManageInventories</Link>
+          </li>
+          <li>
             <Link to="/manageItems">ManageItems</Link>
           </li>
           <li>

@@ -1,35 +1,43 @@
 import React from "react";
 
-const Items = () => {
+const Items = ({ item }) => {
+  const {
+    itemsName,
+    image,
+    description,
+    price,
+    supplierName,
+    quantity,
+    stock,
+    delivery,
+  } = item;
+
   return (
-    <div class="card w-80 border-[1px] border-gray-50 hover:shadow-2xl">
+    <div class="card w-96 border-[1px] border-gray-200  shadow-md hover:shadow-2xl">
       <figure>
-        <img
-          src="https://placeimg.com/400/225/arch"
-          alt="car!"
-          className=" w-80"
-        />
+        <img src={image} alt="car!" className=" w-80 h-52" />
       </figure>
       <div class=" px-2 text-left  ">
-        <h2 class=" text-[19px] my-1 font-bold"> Lorem ipsum dolor dolor</h2>
+        <h2 class=" text-[19px] mb-1 font-bold"> {itemsName}</h2>
         <h2 class=" text-[15px]">
           <span className="text-[15px] font-bold">supplierName: </span>
-          <span> Anisul Islam</span>
+          <span className=" cursor-pointer font-bold hover:text-blue-500">
+            {supplierName}
+          </span>
         </h2>
         <div className=" font-[600] pr-8 my-1 flex justify-between">
           <h4>
             <span className="text-[15px] font-bold"> price: </span>
-            <span>128 $</span>
+            <span>{price} $</span>
           </h4>
           <h4>
-            <span className="text-[15px] font-bold"> quantity: </span>
-            <span>225 p</span>
+            <span className="text-[15px] font-bold"> Quantity: </span>
+            <span>{quantity} p</span>
           </h4>
         </div>
         <p className=" text-left font-medium">
           <span className=" text-[16px] font-bold">Description: </span>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus
-          labore velit asperiores iure eos!
+          <span className="text-[14px]">{description.slice(0, 140)} . . .</span>
         </p>
       </div>
       <div className=" mt-2">

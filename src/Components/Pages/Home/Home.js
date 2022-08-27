@@ -15,7 +15,7 @@ const Home = () => {
         <h1 className=" text-sm text-center title2 font-bold text-gray-400 ">
           Our Inventory Items service?
         </h1>
-        <h1 className=" text-3xl text-center title2 font-bold   px-5 mb-10 ">
+        <h1 className=" text-3xl text-center title2 font-bold   px-5 mb-5 ">
           Inventory Items :
         </h1>
         <div>

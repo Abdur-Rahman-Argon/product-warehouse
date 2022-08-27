@@ -8,6 +8,8 @@ import SignUp from "./Components/Pages/Login/SignUp";
 import RequireAuth from "./Components/Shared/RequireAuth";
 import Inventories from "./Components/Pages/Inventories/Inventories";
 import NotFound from "./Components/Shared/NotFound";
+import ItemsDetails from "./Components/Pages/Inventories/ItemsDetails";
+import ManageInventories from "./Components/Pages/ManageInventories/ManageInventories";
 
 function App() {
   return (
@@ -16,16 +18,29 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/inventories" element={<Inventories />} />
+
         <Route
-          path="/inventories"
+          path="/inventories/:id"
           element={
             <RequireAuth>
-              <Inventories />
+              <ItemsDetails />
             </RequireAuth>
           }
         />
+
+        <Route
+          path="/ManageInventories"
+          element={
+            <RequireAuth>
+              <ManageInventories />
+            </RequireAuth>
+          }
+        />
+
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer></Footer>
