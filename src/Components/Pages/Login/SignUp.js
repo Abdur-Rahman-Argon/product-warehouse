@@ -115,7 +115,7 @@ const SignUp = () => {
             <input
               type="submit"
               value="SignUp"
-              className="btn w-full my-2 btn-success"
+              className="btn w-full my-2 btn-success "
             />
           </div>
         </form>

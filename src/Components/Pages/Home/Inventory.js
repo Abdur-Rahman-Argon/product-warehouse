@@ -3,13 +3,14 @@ import useItems from "../../utilites/useItems";
 import Items from "./Items";
 
 const Inventory = () => {
-  const [items, isLoading, refetch] = useItems();
+  const [items] = useItems();
+  // const [items, isLoading, refetch] = useItems();
 
-  if (isLoading) {
-    return;
-  }
+  // if (isLoading) {
+  //   return;
+  // }
 
-  const homeItems = items.slice(0, 3);
+  const homeItems = items?.slice(0, 3);
 
   // {
   //   itemsName: "",
@@ -25,7 +26,7 @@ const Inventory = () => {
 
   return (
     <div className=" px-5 lg:px-10 my-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {homeItems.map((item) => (
+      {homeItems?.map((item) => (
         <Items item={item}></Items>
       ))}
     </div>

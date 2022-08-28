@@ -22,19 +22,22 @@ const Navbar = () => {
       {user && (
         <>
           <li>
-            <Link to="/manageInventories">ManageInventories</Link>
+            <Link to="/manageInventories"> ManageInventories </Link>
           </li>
           <li>
-            <Link to="/manageItems">ManageItems</Link>
+            <Link to="/manageItems"> ManageItems </Link>
           </li>
           <li>
-            <Link to="/myItems">MyItems</Link>
+            <Link to="/myItems"> MyItems </Link>
           </li>
           <li>
-            <Link to="/addNewItems">AddNewItem</Link>
+            <Link to="/addNewItems"> AddNewItem </Link>
+          </li>
+          <li>
+            <Link to="/addNewItems"> Blogs </Link>
           </li>
         </>
-      )}{" "}
+      )}
     </>
   );
 

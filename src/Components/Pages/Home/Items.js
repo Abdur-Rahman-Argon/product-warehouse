@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Items = ({ item }) => {
   const {
+    _id,
     itemsName,
     image,
     description,
@@ -41,9 +43,11 @@ const Items = ({ item }) => {
         </p>
       </div>
       <div className=" mt-2">
-        <button class=" btn-primary py-2 rounded-t-none w-full text-lg ">
-          Update
-        </button>
+        <Link to={`/inventories/${_id}`}>
+          <button class=" btn-success py-2 rounded-t-none w-full text-lg ">
+            Update
+          </button>
+        </Link>
       </div>
     </div>
   );

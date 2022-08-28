@@ -12,7 +12,7 @@ const Banner = () => {
         accusantium ipsum vel dolores possimus recusandae pariatur veniam
         sapiente error animi porro iure, vero rem quaerat ipsa eaque,
       </p>
-      <button class="btn btn-active btn-primary outline-none my-5">
+      <button class="btn btn-active btn-success outline-none my-5">
         Explore With Us
       </button>
     </div>

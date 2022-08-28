@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import CustomerReview from "./CustomerReview";
 import Inventory from "./Inventory";
 import OurServices from "./OurServices";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -21,9 +22,17 @@ const Home = () => {
         <div>
           <Inventory></Inventory>
         </div>
+
+        <div>
+          <Link to="/inventories">
+            <button className=" btn-success  rounded font-semibold my-5  py-1 px-8">
+              See All Go Inventories <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </Link>
+        </div>
       </section>
 
-      <section className="my-10">
+      <section className="my-14">
         <h1 className=" text-sm text-center title2 font-bold text-gray-400 ">
           What does Our Customer say?
         </h1>
@@ -36,7 +45,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="my-10">
+      <section className="my-14">
         <h1 className=" text-sm text-center font-bold title2 text-gray-400">
           which services do we provide?
         </h1>
