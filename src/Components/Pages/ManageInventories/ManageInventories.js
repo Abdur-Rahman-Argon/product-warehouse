@@ -1,28 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import useItems from "./../../utilites/useItems";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import DeleteConfirm from "../../Shared/DeleteConfirm";
 
 const ManageInventories = () => {
   const [items] = useItems();
 
+  const [deleteModal, setDeleteModal] = useState(false);
+  const [deleteConfirm, setDeleteConfirm] = useState(false);
+
   const navigate = useNavigate();
 
   const removeItems = (id) => {
-    fetch(`http://localhost:5000/deleteItem/${id}`, {
-      method: "DELETE",
-      headers: {
-        "content-type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        if (result.deletedCount === 1) {
-          toast.success("Your Information Update Successful!");
-          navigate("/");
-        }
-      });
+    setDeleteModal(true);
+    // setDeleteConfirm(true);
+    if (deleteConfirm) {
+      //   fetch(`http://localhost:5000/deleteItem/${id}`, {
+      //     method: "DELETE",
+      //     headers: {
+      //       "content-type": "application/json",
+      //     },
+      //   })
+      //     .then((res) => res.json())
+      //     .then((result) => {
+      //       console.log(result);
+      //       if (result.deletedCount === 1) {
+      //         toast.success("Your Information Update Successful!");
+      //         navigate("/");
+      //       }
+      //     });
+    } else {
+    }
   };
 
   return (
@@ -61,12 +70,13 @@ const ManageInventories = () => {
                   <h4 className=" font-bold text-lg">{itm.delivery}</h4>
                 </div>
                 <div>
-                  <button
+                  <label
                     onClick={() => removeItems(itm._id)}
+                    htmlFor="DeleteConfirmPopUp"
                     className="btn btn-error btn-sm lg:btn-md"
                   >
                     Remove
-                  </button>
+                  </label>
                 </div>
               </div>
             </div>
@@ -74,6 +84,12 @@ const ManageInventories = () => {
           </>
         ))}
       </div>
+      {deleteModal && (
+        <DeleteConfirm
+          setDeleteModal={setDeleteModal}
+          setDeleteConfirm={setDeleteConfirm}
+        ></DeleteConfirm>
+      )}
     </div>
   );
 };
