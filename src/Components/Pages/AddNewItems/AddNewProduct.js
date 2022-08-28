@@ -75,7 +75,7 @@ const AddNewProduct = () => {
       res.json().then((result) => {
         console.log(result);
         toast.success("Your Information Update Successful!");
-        navigate("/studentsInfo");
+        navigate("/");
       })
     );
 
