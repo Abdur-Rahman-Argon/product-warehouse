@@ -1,4 +1,6 @@
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./Components/Shared/Footer";
 import Navbar from "./Components/Shared/Navbar";
@@ -44,6 +46,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }

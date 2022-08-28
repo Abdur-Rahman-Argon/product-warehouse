@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const Details = ({ itemDetails }) => {
   const {
@@ -45,6 +46,10 @@ const Details = ({ itemDetails }) => {
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
+        if (result.acknowledged) {
+          reset();
+          toast.success(" product Delivered");
+        }
       });
   };
 
@@ -72,6 +77,7 @@ const Details = ({ itemDetails }) => {
         console.log(result);
         if (result.acknowledged) {
           reset();
+          toast.success(" Your Stock Updated");
         }
       });
   };
