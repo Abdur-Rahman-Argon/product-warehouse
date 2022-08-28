@@ -39,7 +39,9 @@ const Items = ({ item }) => {
         </div>
         <p className=" text-left font-medium">
           <span className=" text-[16px] font-bold">Description: </span>
-          <span className="text-[14px]">{description.slice(0, 140)} . . .</span>
+          <span className="text-[14px]">
+            {description?.slice(0, 135)} . . .
+          </span>
         </p>
       </div>
       <div className=" mt-2">

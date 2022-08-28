@@ -34,7 +34,7 @@ const Inventories = () => {
       <div>
         <Link to="/manageInventories">
           <button className=" btn-success  rounded font-semibold my-5  py-1 px-8">
-            Manage Inventories <i class="fa-solid fa-arrow-right"></i>
+            Go Manage Inventories <i class="fa-solid fa-arrow-right"></i>
           </button>
         </Link>
       </div>
