@@ -13,6 +13,7 @@ import SocialLogin from "./SocialLogin";
 // import { getAuth, sendEmailVerification } from "firebase/auth";
 import { toast } from "react-toastify";
 import Loading from "../../Shared/Loading";
+import useToken from "../../utilites/useToken";
 
 const SignUp = () => {
   const [createUserWithEmailAndPassword, CUser, CULoading, uCError] =
@@ -29,13 +30,14 @@ const SignUp = () => {
   const [user, loading] = useAuthState(auth);
   const [agree, setAgree] = useState(false);
   const [error, setError] = useState("");
+  const [token] = useToken(user || CUser);
 
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
   //
 
-  if (user) {
+  if (user && token) {
     navigate(from, { replace: true });
   }
 

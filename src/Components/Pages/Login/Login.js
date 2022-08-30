@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading";
+import useToken from "../../utilites/useToken";
 import ResetPass from "./ResetPass";
 import SocialLogin from "./SocialLogin";
 
@@ -23,13 +24,15 @@ const Login = () => {
 
   const [user, loading] = useAuthState(auth);
 
-  // const [email, setEmail] = useState(user?.email);
+  const [token] = useToken(user || logUser);
+
   const [resetEmail, setResetEmail] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
-  if (user) {
+
+  if (user && token) {
     navigate(from, { replace: true });
   }
 
