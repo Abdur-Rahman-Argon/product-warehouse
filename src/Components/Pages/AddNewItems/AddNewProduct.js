@@ -6,11 +6,15 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading";
 
 const AddNewProduct = () => {
+  const [user] = useAuthState(auth);
+
   const [imgUrl, setImgUrl] = useState(pic);
   const [imageUrl, setImageUrl] = useState();
-  const [user] = useAuthState(auth);
+  const [imageData, setImageData] = useState();
+  const [loading, setLoading] = useState(false);
 
   const imageStorageKey = "2380d2dfbb3a1a216d57453cbd4c3837";
 
@@ -25,47 +29,46 @@ const AddNewProduct = () => {
   const onImageChange = (e) => {
     const [file] = e.target.files;
     setImgUrl(URL.createObjectURL(file));
-
     const image = file;
     console.log(image);
     const formData = new FormData();
     formData.append("image", image);
-    const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
-    fetch(url, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        console.log("image", result);
-        setImageUrl(result.data.display_url);
-      });
+    setImageData(formData);
   };
 
-  const onSubmit = (data) => {
-    const ImageUrl = imageUrl;
-    const itemsName = data.itemsName;
-    const supplierName = data.supplierName;
-    const price = data.price;
-    const quantity = data.quantity;
-    const description = data.description;
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
+  const onSubmit = async (data) => {
+    setLoading(true);
     const itemsInformation = {
       userName: user.displayName,
       UserEmail: user.email,
-      image: ImageUrl,
-      itemsName: itemsName,
-      supplierName: supplierName,
-      price: price,
-      quantity: quantity,
-      stock: quantity,
+      image: imageUrl,
+      itemsName: data.itemsName,
+      supplierName: data.supplierName,
+      price: data.price,
+      quantity: data.quantity,
+      stock: data.quantity,
       delivery: 0,
-      description: description,
+      description: data.description,
     };
 
-    const url = " http://localhost:5000/AllItems";
-
+    // --- image post on data-base
+    const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
     fetch(url, {
+      method: "POST",
+      body: imageData,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setImageUrl(result.data.display_url);
+      });
+
+    //--- items data post on data-base
+    const url2 = " http://localhost:5000/AllItems";
+    await fetch(url2, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -73,17 +76,15 @@ const AddNewProduct = () => {
       body: JSON.stringify(itemsInformation),
     }).then((res) =>
       res.json().then((result) => {
-        console.log(result);
         toast.success("Your Information Update Successful!");
         navigate("/");
+        setLoading(false);
       })
     );
-
-    // console.log(data, ImageUrl);
   };
 
   return (
-    <div className=" w-full lg:w-[500px] px-5 my-20 mx-auto">
+    <div className=" w-full lg:w-[800px] px-5 my-20 mx-auto">
       <div class="  mx-auto border-[2px] rounded-md border-gray-200 p-2">
         <div class="avatar w-52  mx-auto ">
           <img src={imgUrl} className="w-full" alt="" />

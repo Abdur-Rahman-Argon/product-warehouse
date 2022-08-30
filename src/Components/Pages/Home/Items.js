@@ -29,12 +29,12 @@ const Items = ({ item }) => {
         </h2>
         <div className=" font-[600] pr-8 my-1 flex justify-between">
           <h4>
-            <span className="text-[15px] font-bold"> price: </span>
+            <span className="text-[15px] font-bold"> Price: </span>
             <span>{price} $</span>
           </h4>
           <h4>
             <span className="text-[15px] font-bold"> Quantity: </span>
-            <span>{quantity} p</span>
+            <span>{quantity} pc.</span>
           </h4>
         </div>
         <p className=" text-left font-medium">

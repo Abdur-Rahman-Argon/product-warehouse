@@ -24,17 +24,15 @@ const Navbar = () => {
           <li>
             <Link to="/manageInventories"> ManageInventories </Link>
           </li>
-          <li>
-            <Link to="/manageItems"> ManageItems </Link>
-          </li>
+
           <li>
             <Link to="/myItems"> MyItems </Link>
           </li>
           <li>
             <Link to="/addNewItems"> AddNewItem </Link>
           </li>
-          <li>
-            <Link to="/addNewItems"> Blogs </Link>
+          <li className=" block md:hidden lg:block">
+            <Link to="/Blogs"> Blogs </Link>
           </li>
         </>
       )}
@@ -55,7 +53,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div class="navbar  md:px-20  bg-slate-700 text-white ">
+    <div class="navbar px-5 md:px-10 lg:px-20  bg-slate-700 text-white ">
       <div class="flex-1 navbar-start">
         <Link to="/" class="">
           <h1 className="normal-case title-style text-2xl">P-Store House</h1>

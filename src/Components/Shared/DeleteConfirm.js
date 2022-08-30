@@ -1,4 +1,5 @@
 import React from "react";
+import deleteIcon from "./../../images/3389152.png";
 
 const DeleteConfirm = ({ setDeleteModal, setDeleteConfirm }) => {
   //
@@ -15,25 +16,29 @@ const DeleteConfirm = ({ setDeleteModal, setDeleteConfirm }) => {
   return (
     <div>
       <input type="checkbox" id="DeleteConfirmPopUp" class="modal-toggle" />
+
       <div class="modal ">
-        <div class="modal-box p-16 relative">
-          <h3 class="text-lg font-bold">
-            <i class="fa-solid fa-calendar-xmark"></i> Are You Sure Remove this
-            items? <i class="fa-solid fa-calendar-xmark"></i>
+        <div class="modal-box p-14 relative text-center">
+          <div className="w-24 mb-8 mx-auto">
+            <img src={deleteIcon} alt="" className="  w-20" />
+          </div>
+          <h3 class="text-xl font-bold">Are You Sure Remove this items?</h3>
+          <h3 class="text-[16px] my-2 font-semibold">
+            If you remove this items can't recover It.
           </h3>
 
           <div className=" flex justify-around mt-10">
             <button
-              onClick={deleteConfirm}
-              className="btn btn-success normal-case btn-sm lg:btn-md"
-            >
-              Confirm
-            </button>
-            <button
               onClick={deleteCancel}
-              className="btn btn-error normal-case btn-sm lg:btn-md"
+              className="btn bg-gray-500 hover:bg-gray-500 normal-case px-8  "
             >
               Cancel
+            </button>
+            <button
+              onClick={deleteConfirm}
+              className="btn btn-error normal-case px-5 "
+            >
+              Yes, Remove it
             </button>
           </div>
         </div>

@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import Loading from "../../Shared/Loading";
 
 const Details = ({ itemDetails }) => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    reset,
-    formState: { errors },
-  } = useForm();
+  const [loading, setLoading] = useState(false);
+  const { register, handleSubmit, reset } = useForm();
+
   const {
     _id,
     itemsName,
@@ -26,9 +23,13 @@ const Details = ({ itemDetails }) => {
   const [nStock, setStock] = useState(stock);
   const [nDelivery, setDelivery] = useState(delivery);
 
-  // delivery update--------------------------------------------
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
+  // delivery update--------------------------------------------
   const delivered = () => {
+    setLoading(true);
     const newStock = parseFloat(nStock) - 1;
     setStock(newStock);
     const newDelivery = parseFloat(nDelivery) + 1;
@@ -49,14 +50,15 @@ const Details = ({ itemDetails }) => {
         if (result.acknowledged) {
           reset();
           toast.success(" product Delivered");
+          setLoading(false);
         }
       });
   };
 
   // stock update--------------------------------------------
-
   const onSubmit = (data) => {
     // event.preventdefault();
+    setLoading(true);
     const restok = data.restock;
     const newStock = parseFloat(nStock) + parseFloat(restok);
     setStock(newStock);
@@ -78,16 +80,19 @@ const Details = ({ itemDetails }) => {
         if (result.acknowledged) {
           reset();
           toast.success(" Your Stock Updated");
+          setLoading(false);
         }
       });
   };
+
+  //
   return (
     <div>
       <div className=" my-10 flex flex-col md:flex-row justify-around">
         <div className="flex-1">
           <img src={image} alt="" className="w-96" />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 p-5">
           <div class=" px-2 text-left  ">
             <h2 class=" text-3xl mb-2 font-bold"> {itemsName}</h2>
             <h2 class=" text-[15px]">

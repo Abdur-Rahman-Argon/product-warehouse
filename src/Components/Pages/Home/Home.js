@@ -36,7 +36,7 @@ const Home = () => {
         <h1 className=" text-sm text-center title2 font-bold text-gray-400 ">
           What does Our Customer say?
         </h1>
-        <h1 className=" mb-5 text-3xl text-center title2 font-bold ">
+        <h1 className=" mb-5 text-3xl text-center title2 font-bold underline ">
           Customer Review
         </h1>
 
@@ -49,9 +49,17 @@ const Home = () => {
         <h1 className=" text-sm text-center font-bold title2 text-gray-400">
           which services do we provide?
         </h1>
-        <h1 className=" text-3xl text-center title2 font-bold mb-5 ">
-          Our Services :
+        <h1 className=" mb-4 underline text-3xl text-center title2 font-bold ">
+          Our Services
         </h1>
+        <div className=" mb-10 font-medium text-[16px] w-10/12 lg:w-8/12 mx-auto">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor iure
+            animi a deleniti ipsam? Distinctio ipsam eligendi enim eos molestias
+            nulla, in explicabo repellendus, veniam voluptate est qui
+            necessitatibus?
+          </p>
+        </div>
         <div>
           <OurServices></OurServices>
         </div>

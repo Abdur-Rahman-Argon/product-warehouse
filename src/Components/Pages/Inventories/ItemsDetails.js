@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import Details from "./Details";
+import Loading from "../../Shared/Loading";
 
 const ItemsDetails = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const ItemsDetails = () => {
   // }
 
   if (isLoading) {
-    return;
+    return <Loading></Loading>;
   }
 
   return (

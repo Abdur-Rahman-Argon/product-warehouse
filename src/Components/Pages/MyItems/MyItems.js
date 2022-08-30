@@ -1,29 +1,33 @@
 import React, { useState } from "react";
-import useItems from "./../../utilites/useItems";
-import { toast } from "react-toastify";
+import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import DeleteConfirm from "../../Shared/DeleteConfirm";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import { toast } from "react-toastify";
 import Loading from "../../Shared/Loading";
-import { useQuery } from "react-query";
 
-const ManageInventories = () => {
-  // const [items] = useItems();
+const MyItems = () => {
+  const [user, ULoading] = useAuthState(auth);
 
-  const {
-    data: items,
-    isLoading,
-    refetch,
-  } = useQuery("product", () =>
-    fetch("http://localhost:5000/AllItems").then((res) => res.json())
-  );
-
-  const [loading, setLoading] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
   const [deleteConfirm, setDeleteConfirm] = useState(false);
   const [deleteId, setDeleteId] = useState();
+  const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
 
-  if (loading || isLoading) {
+  const {
+    data: myItems,
+    isLoading,
+    refetch,
+  } = useQuery("items", () =>
+    fetch(`http://localhost:5000/userItems/${user.email}`).then((res) =>
+      res.json()
+    )
+  );
+
+  if (ULoading || isLoading || loading) {
     return <Loading></Loading>;
   }
 
@@ -44,7 +48,7 @@ const ManageInventories = () => {
       .then((result) => {
         console.log(result);
         if (result.deletedCount === 1) {
-          toast.success("Your Information Update Successful!");
+          toast.success("Your items remove Successful!");
           setDeleteModal(false);
           setDeleteConfirm(false);
           setDeleteId("");
@@ -57,28 +61,42 @@ const ManageInventories = () => {
 
   return (
     <div className="px-5">
-      <div className=" my-8 underline font-bold text-2xl">
-        <h1>Manage Your Inventories</h1>
-      </div>
-      <div class="divider"></div>
-      <div className=" flex items-center mt-3">
-        <div className="mx-8 font-bold">Si</div>
-        <div className=" w-full font-semibold grid grid-cols-3 md:grid-cols-6 gap-5 items-center">
-          <div>image</div>
-          <div>Items title</div>
-          <div>Price</div>
-          <div>Stock</div>
-          <div>delivered</div>
-          <div>Remove Items</div>
-        </div>
-      </div>
-      <div class="divider"></div>
+      {myItems.length > 0 ? (
+        <>
+          <div className=" my-5 font-bold text-2xl">
+            <h1>My All Items Here</h1>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className=" my-5 font-bold text-2xl">
+            <h1> You have no added items here.</h1>
+          </div>
+        </>
+      )}
+      {myItems.length > 0 && (
+        <>
+          <div class="divider"></div>
+          <div className=" flex items-center mt-3">
+            <div className="mx-8 font-bold">Si</div>
+            <div className=" w-full font-semibold grid grid-cols-3 md:grid-cols-6 gap-5 items-center">
+              <div>image</div>
+              <div>Items title</div>
+              <div>Price</div>
+              <div>Stock</div>
+              <div>delivered</div>
+              <div>Remove Items</div>
+            </div>
+          </div>
+          <div class="divider"></div>
+        </>
+      )}
       <div className=" grid grid-cols-1">
-        {items?.map((itm, index) => (
+        {myItems?.map((itm, index) => (
           <>
             <div className=" flex items-center">
-              <div className="mx-8 font-bold">{index + 1}</div>
-              <div className=" grid grid-cols-3 md:grid-cols-6 gap-8 items-center w-full">
+              <div className="mr-16 lg:mr-20 ml-8 font-bold">{index + 1}</div>
+              <div className=" grid grid-cols-3 md:grid-cols-6 gap-5 items-center w-full">
                 <div>
                   <img src={itm.image} className=" w-16" alt="" />
                 </div>
@@ -108,15 +126,16 @@ const ManageInventories = () => {
             <div class="divider"></div>
           </>
         ))}
+
+        {deleteModal && (
+          <DeleteConfirm
+            setDeleteModal={setDeleteModal}
+            setDeleteConfirm={setDeleteConfirm}
+          ></DeleteConfirm>
+        )}
       </div>
-      {deleteModal && (
-        <DeleteConfirm
-          setDeleteModal={setDeleteModal}
-          setDeleteConfirm={setDeleteConfirm}
-        ></DeleteConfirm>
-      )}
     </div>
   );
 };
 
-export default ManageInventories;
+export default MyItems;

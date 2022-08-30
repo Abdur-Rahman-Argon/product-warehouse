@@ -1,8 +1,13 @@
 import React from "react";
+import Loading from "../../Shared/Loading";
 import Review from "./Review";
 
 const CustomerReview = () => {
   const reviews = [1, 2, 3];
+
+  // if(loading){
+  //   return <Loading></Loading>
+  // }
 
   return (
     <div className=" w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-around items-end gap-5">

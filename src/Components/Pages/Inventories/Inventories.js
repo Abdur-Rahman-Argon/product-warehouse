@@ -1,11 +1,13 @@
 import React from "react";
 // import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
+import Loading from "../../Shared/Loading";
 import useItems from "../../utilites/useItems";
 import Items from "./../Home/Items";
 
 const Inventories = () => {
   const [Alltems] = useItems();
+
   // const [Alltems, isLoading, refetch] = useItems();
 
   // const {
@@ -18,9 +20,7 @@ const Inventories = () => {
 
   // if (isLoading) {
   //   return (
-  //     <>
-  //       <p>loading</p>
-  //     </>
+  // return <Loading></Loading>
   //   );
   // }
 
