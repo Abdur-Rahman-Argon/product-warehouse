@@ -11,6 +11,24 @@
   font-family: "Merriweather", serif;
 }
 
+.trapezium {
+  height: 0;
+  width: 150px;
+  border-top: 128px solid green;
+  border-right: 80px solid transparent;
+}
+
+.heading {
+  font-family: "Mukta", sans-serif;
+}
+
+.height-0 {
+  height: 0px;
+}
+.height-100 {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

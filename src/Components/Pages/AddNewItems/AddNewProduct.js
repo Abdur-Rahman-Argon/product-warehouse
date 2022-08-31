@@ -67,11 +67,12 @@ const AddNewProduct = () => {
       });
 
     //--- items data post on data-base
-    const url2 = " http://localhost:5000/AllItems";
+    const url2 = " https://thawing-crag-90386.herokuapp.com/AllItems";
     await fetch(url2, {
       method: "POST",
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify(itemsInformation),
     }).then((res) =>
@@ -84,7 +85,12 @@ const AddNewProduct = () => {
   };
 
   return (
-    <div className=" w-full lg:w-[800px] px-5 my-20 mx-auto">
+    <div className=" w-full heading lg:w-[800px] p-5 my-20 mx-auto border-[1px] shadow-2xl rounded-lg">
+      <div>
+        <h1 className="font-bold text-4xl mb-5">
+          Please Add <span className=" text-success">New Items</span>
+        </h1>
+      </div>
       <div class="  mx-auto border-[2px] rounded-md border-gray-200 p-2">
         <div class="avatar w-52  mx-auto ">
           <img src={imgUrl} className="w-full" alt="" />
@@ -160,19 +166,22 @@ const AddNewProduct = () => {
             name=""
             id=""
             cols="30"
-            rows="5"
+            rows="4"
             type="text"
             {...register("description")}
-            placeholder="items title"
-            className=" font-medium text-sm py-2 px-5 focus:outline-none border-[1px] border-gray-300 rounded-lg w-full"
+            placeholder="items short description write here"
+            className=" font-medium text-base py-2 px-5 focus:outline-none border-[1px] border-gray-300 rounded-lg w-full"
           ></textarea>
         </div>
 
         <div>
-          <input
+          <button
             type="submit"
-            className="font-medium text-sm rounded-lg w-full p-[9px] my-5 mx-0 bg-success border-[1px] border-gray-200"
-          />
+            className="text-lg font-semibold rounded-lg w-full p-[9px] my-5 mx-0 bg-success border-[1px] border-gray-200"
+          >
+            {" "}
+            Add Now
+          </button>
         </div>
       </form>
     </div>

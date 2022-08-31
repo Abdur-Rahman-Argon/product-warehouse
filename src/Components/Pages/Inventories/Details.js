@@ -23,9 +23,9 @@ const Details = ({ itemDetails }) => {
   const [nStock, setStock] = useState(stock);
   const [nDelivery, setDelivery] = useState(delivery);
 
-  if (loading) {
-    return <Loading></Loading>;
-  }
+  // if (loading) {
+  //   return <Loading></Loading>;
+  // }
 
   // delivery update--------------------------------------------
   const delivered = () => {
@@ -37,7 +37,7 @@ const Details = ({ itemDetails }) => {
     const upDelivery = { stock: newStock, delivery: newDelivery };
     console.log(upDelivery);
 
-    fetch(`http://localhost:5000/deliveryUpdate/${_id}`, {
+    fetch(`https://thawing-crag-90386.herokuapp.com/deliveryUpdate/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -67,7 +67,7 @@ const Details = ({ itemDetails }) => {
     const upStock = { stock: newStock, quantity: newQuantity };
     console.log(upStock);
 
-    fetch(`http://localhost:5000/stockUpdate/${_id}`, {
+    fetch(`https://thawing-crag-90386.herokuapp.com/stockUpdate/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

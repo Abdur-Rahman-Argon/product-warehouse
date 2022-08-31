@@ -1,0 +1,116 @@
+[
+  {
+    "_id": "630a29850785227d9891d805",
+    "supplierName": "Brain Denger",
+    "itemsName": "Silver Hawk (Suzuki)",
+    "price": "225000",
+    "image": "https://i.ibb.co/WD8LX7L/motorcycle-suzuku.png",
+    "description": "Silver Hawk bike price starts from $ 1.69 Lakh for 42 to $ 2.06 Lakh for Perak. Choose a Silver Hawk bike to know all the details, including the latest price & bike offers at dealer showrooms in your city",
+    "quantity": "82",
+    "stock": 55,
+    "delivery": 27
+  },
+  {
+    "_id": "630a29850785227d9891d806",
+    "supplierName": "Ethan Loise",
+    "itemsName": "Super Hawk (Honda)",
+    "price": "125000",
+    "image": "https://i.ibb.co/M87HL5b/Honda-Motorcycle.png",
+    "description": "Honda Aerox 155 is a bike available at a starting price of Rs. 1,37,451 in world. It is available in only 1 variant and 3 colours. The Honda Super Hawk  is powered by 155cc BS6 engine which develops a power of 14.79 bhp and a torque of 13.9 Nm. With front disc and rear drum brakes, ",
+    "quantity": 127,
+    "stock": 85,
+    "delivery": 15
+  },
+  {
+    "_id": "630a29850785227d9891d807",
+    "supplierName": "Roman Rings",
+    "itemsName": "Intruder (Suzuki)",
+    "price": "128500",
+    "image": "https://i.ibb.co/8mrg1xN/motorcycle-P7.png",
+    "description": "Suzuki bike price starts from $125,600 for Access 125 to Rs. 16.41 Lakh for Hayabusa. Suzuki offers a total of eleven products which are Petrol powered two wheelers only. Suzuki Access 125 is a popular scooter in world , Suzuki Gixxer is one of the top bikes in world",
+    "quantity": "82",
+    "stock": "73",
+    "delivery": "42"
+  },
+  {
+    "_id": "630a29850785227d9891d808",
+    "supplierName": "Davit Lewis",
+    "itemsName": "Red Hunter (Suzuki)",
+    "price": "1890500",
+    "image": "https://i.ibb.co/hYdRFjy/Red-Motorcycle.png",
+    "description": "Suzuki MT 15 V2 is a street bike available at a starting price of $ 1,60,875 in world. It is available in 2 variants and 4 colours with top variant price starting from $ 1,61,875. The Suzuki MT 15 V2 is powered by 155cc BS6 engine which develops a power of 18.14 bhp and a torque of 14.1 Nm. With both front and rear disc brakes",
+    "quantity": "82",
+    "stock": 86,
+    "delivery": 16
+  },
+  {
+    "_id": "630a29850785227d9891d809",
+    "supplierName": "Nathaniel Glow",
+    "itemsName": "Sportster (Harley-Davidson)",
+    "price": "186500",
+    "image": "https://i.ibb.co/njjwxNg/motorcycle11.png",
+    "description": "Sportster bike  is one of the 11 different products from Harley-Davidson  on sale in world. There is only one version on sale and comes with a sticker price of $ 2.33 Lakh. The Harley-Davidson t generates a max power of NA along with a peak torque of 230 Nm.",
+    "quantity": "82",
+    "stock": "25",
+    "delivery": "10"
+  },
+  {
+    "_id": "630a29850785227d9891d80a",
+    "supplierName": "Joshya Hurry",
+    "itemsName": "Meteor Minor (yamaha",
+    "price": "205500",
+    "image": "https://i.ibb.co/Y8h250s/yamaha-bike.png",
+    "description": "The dark & aggressive Yamaha #MT15 is finally here, a hyper motard like none other with Bi-functional LED headlight & a powerful 155cc engine with ABS. ",
+    "quantity": "82",
+    "stock": 81,
+    "delivery": 28
+  },
+  {
+    "_id": "630b452cda9f5368b618cb7b",
+    "userName": "Abdur Rahman Argon",
+    "UserEmail": "abdurrahmanargon7@gmail.com",
+    "image": "https://i.ibb.co/SrszKMJ/YAMAHA.png",
+    "itemsName": "Yamaha YZF-R1",
+    "supplierName": " Yamaha Motorsports",
+    "price": "269999",
+    "quantity": "80",
+    "stock": 78,
+    "delivery": 2,
+    "description": "Yamaha Motor Co., Ltd. is a Japanese multinational manufacturer of motorcycles, marine products such as boats and outboard motors"
+  },
+  {
+    "_id": "630c42ca0785227d989defb8",
+    "supplierName": "Marlin Blange",
+    "itemsName": "Red Birds (Honda)",
+    "price": "164500",
+    "image": "https://i.ibb.co/c2chjb2/motorcycle25.png",
+    "description": "Red Birds bike price starts from $1.69 Lakh for 42 to $2587 Lakh for Perak. Red Birds Honda offers a total of three products which are Petrol powered two wheelers only. Red Birds Honda Perak is one of the top Cruiser bikes in world . ",
+    "quantity": "82",
+    "stock": "95",
+    "delivery": "41"
+  },
+  {
+    "_id": "630c43090785227d989e5790",
+    "supplierName": "Provas Dengol",
+    "itemsName": "V-Max (Yamaha)",
+    "price": "218900",
+    "image": "https://i.ibb.co/n7dXsHc/Yamaha-Bike-PNG.png",
+    "description": "The original supersport is back! Born of Yamaha’s racing DNA that shaped legends like M1, The R1 and the R-series, the all-new YZF R15 powered with Dual Channel ABS is max powerhouse of 18.6 PS that brings track experience to the streets. ",
+    "quantity": "82",
+    "stock": "82",
+    "delivery": "17"
+  },
+  {
+    "_id": "630cdd0f52d2d0c2212f7cf2",
+    "userName": null,
+    "UserEmail": "abdurrahman@gmail.com",
+    "image": "https://i.ibb.co/JCm1ZfL/Sujoki-Bike.png",
+    "itemsName": "Yamaha YZF-R1",
+    "supplierName": " Yamaha Motorsports",
+    "price": "215000",
+    "quantity": "25",
+    "stock": "25",
+    "delivery": 0,
+    "description": "The Suzuki Gixxer SF (GSX-150F), a faired version of the Gixxer was launched on 7 April 2015.[9] SF stands for Sport Fairing. The fully faired version is 4 kg heavier than the naked version; the other specifications remain the same."
+  }
+]

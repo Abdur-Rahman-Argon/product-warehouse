@@ -3,20 +3,24 @@ import { useQuery } from "react-query";
 
 const useItems = () => {
   const [items, setItems] = useState();
+  const [loading, setLoading] = useState();
 
   //   const {
   //     data: items,
   //     isLoading,
   //     refetch,
   //   } = useQuery("items", () =>
-  //     fetch("http://localhost:5000/AllItems").then((res) => res.json())
+  //     fetch("https://thawing-crag-90386.herokuapp.com/AllItems").then((res) => res.json())
   //   );
 
   useEffect(() => {
-    fetch("http://localhost:5000/AllItems")
+    setLoading(true);
+    fetch("https://thawing-crag-90386.herokuapp.com/AllItems")
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
+        // console.log(data);
+        setLoading(false);
       });
   }, []);
 
@@ -25,7 +29,7 @@ const useItems = () => {
   //   }
 
   //   return [items, isLoading, refetch];
-  return [items];
+  return [items, loading];
 };
 
 export default useItems;

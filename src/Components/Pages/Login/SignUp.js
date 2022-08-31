@@ -71,7 +71,9 @@ const SignUp = () => {
 
   return (
     <div className="card mx-auto my-5 p-5 card-compact w-96 bg-base-100 shadow-2xl">
-      <h1 className="text-center text-2xl font-bold">Please SignUp</h1>
+      <h1 className="text-center text-2xl font-bold">
+        Please <span className=" text-success">SignUp</span>
+      </h1>
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>

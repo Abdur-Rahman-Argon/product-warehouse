@@ -1,34 +1,40 @@
 import React, { useEffect } from "react";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { useNavigate, useLocation } from "react-router-dom";
 import useToken from "../../utilites/useToken";
+import Loading from "../../Shared/Loading";
 
 const SocialLogin = () => {
-  const [signInWithGoogle, gUser, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, gUser, SLoading, error] = useSignInWithGoogle(auth);
 
+  const [user, loading] = useAuthState(auth);
   const [token] = useToken(gUser);
 
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
 
-  if (gUser || token) {
+  if ((gUser || user) && token) {
     navigate(from, { replace: true });
   }
+
+  // if (SLoading || loading) {
+  //   return <Loading></Loading>;
+  // }
 
   const handleGoogleSignUp = async () => {
     signInWithGoogle();
 
-    const displayName = await gUser.user.displayName;
-    const email = await gUser.user.email;
-    const photoURL = await gUser.user.photoURL;
+    // const displayName = await gUser.user.displayName;
+    // const email = await gUser.user.email;
+    // const photoURL = await gUser.user.photoURL;
 
-    const user = await {
-      displayName,
-      email,
-      photoURL,
-    };
+    // const user = await {
+    //   displayName,
+    //   email,
+    //   photoURL,
+    // };
     // await console.log(gUser, user);
     // fetch("https://frozen-retreat-64301.herokuapp.com/user", {
     //   method: "POST",
@@ -48,13 +54,14 @@ const SocialLogin = () => {
     <div>
       <button
         onClick={handleGoogleSignUp}
-        className="btn w-full my-2 flex items-center justify-center gap-3 bg-indigo-600 text-white"
+        className="btn btn-outline w-full my-2 flex items-center justify-center gap-3 "
       >
-        <i class="fa-brands fa-google"></i> SignUp with GooGle
+        <i class="fa-brands fa-google text-red-600 text-xl"></i> SignUp with
+        GooGle
       </button>
-      <button className="btn w-full my-2 flex items-center justify-center gap-3 bg-indigo-600 text-white">
-        <i class="fa-brands fa-facebook-square text-2xl"></i> SignUp with
-        Facebook
+      <button className="btn btn-outline w-full my-2 flex items-center justify-center gap-3">
+        <i class="fa-brands fa-facebook-square text-blue-600 text-2xl"></i>
+        SignUp with Facebook
       </button>
     </div>
   );

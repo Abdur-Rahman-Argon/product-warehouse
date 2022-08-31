@@ -10,50 +10,50 @@ const OurServices = () => {
 
   return (
     <div className="flex justify-around flex-wrap">
-      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-sm border-[1px] border-gray-300 ">
+      <div class="card w-32  lg:w-72 bg-base-100 m-2 shadow-sm border-[1px] border-gray-300 ">
         <figure class="px-10 pt-5 ">
-          <img src={icon1} alt="Shoes" class="rounded-xl  w-[80px]" />
+          <img src={icon1} alt="Shoes" class="rounded-xl  w-[130px]" />
         </figure>
         <div class="text-center my-3">
-          <h2 class=" text-sm font-semibold">SHIPMENT</h2>
+          <h2 class=" text-lg font-bold my-2">SHIPMENT</h2>
         </div>
       </div>
 
-      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-sm border-[1px] border-gray-300">
+      <div class="card w-32  lg:w-72 bg-base-100 m-2 shadow-sm border-[1px] border-gray-300">
         <figure class="px-10 pt-5 w- ">
-          <img src={icon2} alt="Shoes" class="w-[80px] rounded-full" />
+          <img src={icon2} alt="Shoes" class="w-[130px] rounded-full" />
         </figure>
         <div class="text-center my-3">
-          <h2 class=" text-sm font-semibold">TRACKING</h2>
+          <h2 class=" text-lg font-bold my-2">TRACKING</h2>
         </div>
       </div>
 
-      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-sm border-[1px] border-gray-300">
+      <div class="card w-32  lg:w-72 bg-base-100 m-2 shadow-sm border-[1px] border-gray-300">
         <figure class="px-10 pt-5 ">
-          <img src={icon3} alt="Shoes" class="rounded-xl  w-[80px]" />
+          <img src={icon3} alt="Shoes" class="rounded-xl  w-[130px]" />
         </figure>
         <div class="text-center my-3">
-          <h2 class=" text-sm font-semibold">STORAGE</h2>
+          <h2 class=" text-lg font-bold my-2">STORAGE</h2>
         </div>
       </div>
 
-      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-sm border-[1px] border-gray-300">
+      <div class="card w-32  lg:w-72 bg-base-100 m-2 shadow-sm border-[1px] border-gray-300">
         <figure class="px-10 pt-5 ">
-          <img src={icon4} alt="Shoes" class="rounded-xl  w-[80px]" />
+          <img src={icon4} alt="Shoes" class="rounded-xl  w-[130px]" />
         </figure>
         <div class="text-center my-3">
-          <h2 class=" text-sm font-semibold">TRANSPORT</h2>
+          <h2 class=" text-lg font-bold my-2">TRANSPORT</h2>
         </div>
       </div>
 
-      <div class="card w-32  lg:w-52 bg-base-100 m-2 shadow-sm border-[1px] border-gray-300">
+      {/* <div class="card w-32  lg:w-72 bg-base-100 m-2 shadow-sm border-[1px] border-gray-300">
         <figure class="px-10 pt-5 ">
-          <img src={icon5} alt="Shoes" class="rounded-xl  w-[90px]" />
+          <img src={icon5} alt="Shoes" class="rounded-xl  w-[130px]" />
         </figure>
         <div class="text-center my-3">
-          <h2 class=" text-sm font-semibold">PALLET</h2>
+          <h2 class=" text-lg font-bold my-2">PALLET</h2>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

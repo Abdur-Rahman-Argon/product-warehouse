@@ -13,7 +13,9 @@ const ItemsDetails = () => {
     isLoading,
     refetch,
   } = useQuery("items", () =>
-    fetch(`http://localhost:5000/AllItems/${id}`).then((res) => res.json())
+    fetch(`https://thawing-crag-90386.herokuapp.com/AllItems/${id}`).then(
+      (res) => res.json()
+    )
   );
 
   // if (id) {

@@ -15,7 +15,7 @@ const Items = ({ item }) => {
   } = item;
 
   return (
-    <div class="card w-96 border-[1px] border-gray-200  shadow-md hover:shadow-2xl">
+    <div class="card w-[320px] md:w-96 border-[1px] border-gray-200  shadow-md hover:shadow-2xl hover:scale-105 ease-in-out duration-200 ">
       <figure>
         <img src={image} alt="car!" className=" w-80 h-52" />
       </figure>
@@ -46,8 +46,8 @@ const Items = ({ item }) => {
       </div>
       <div className=" mt-2">
         <Link to={`/inventories/${_id}`}>
-          <button class=" btn-success py-2 rounded-t-none w-full text-lg ">
-            Update
+          <button class=" btn-success py-2 rounded-t-none w-full text-lg font-medium ">
+            View Details
           </button>
         </Link>
       </div>
