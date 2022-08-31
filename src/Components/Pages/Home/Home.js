@@ -4,8 +4,7 @@ import CustomerReview from "./CustomerReview";
 import Inventory from "./Inventory";
 import OurServices from "./OurServices";
 import { Link } from "react-router-dom";
-import NewsLetter from "./NewsLetter";
-import Extra from "./Extra";
+
 import WhyChose from "./WhyChose";
 
 const Home = () => {
@@ -17,7 +16,7 @@ const Home = () => {
 
       <section className="my-10">
         <div className="my-10">
-          <h1 className=" text-sm text-center heading font-bold text-gray-400 ">
+          <h1 className=" text-sm text-center heading font-bold text-gray-500 ">
             Our Inventory Items service?
           </h1>
           <h1 className=" text-3xl text-center heading font-bold   px-5">
