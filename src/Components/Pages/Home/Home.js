@@ -23,9 +23,9 @@ const Home = () => {
             Inventory Items :
           </h1>
           <p className=" w-10/12 mx-auto my-3  text-base font-medium">
-            <span className="text-success">P-Store House</span> the most latgest
-            bike store in the wold can serve you latest qulity of motorcycle
-            also you can sell here your motorcycle
+            <span className="text-success font-bold">P-Store House</span> the
+            most latgest bike store in the wold can serve you latest qulity of
+            motorcycle also you can sell here your motorcycle
           </p>
         </div>
         <div>
@@ -42,7 +42,7 @@ const Home = () => {
       </section>
 
       <section className="py-14 bg-slate-300 ">
-        <h1 className=" text-base text-center heading font-bold text-gray-500 ">
+        <h1 className=" text-base text-center heading font-bold text-gray-600 ">
           What does Our Customer say?
         </h1>
         <h1 className=" mb-5 text-4xl text-center heading font-bold ">

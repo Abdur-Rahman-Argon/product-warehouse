@@ -1,11 +1,11 @@
 import React from "react";
 
-const CustomerReview = ({ img }) => {
+const CustomerReview = ({ review }) => {
   return (
     <div class="card w-72 px-2 py-3 bg-gray-50 border-[1px] border-gray-100 shadow-xl">
       <div className="flex justify-between items-top my-3">
         <div className="w-24 mx-auto  ">
-          <img src={img} className="w-full h-24  rounded-full" alt="" />
+          <img src={review.img} className="w-full h-24  rounded-full" alt="" />
 
           {/* <div className=" text-left">
             <h1 className="font-bold ">Name</h1>
@@ -24,11 +24,8 @@ const CustomerReview = ({ img }) => {
         </div> */}
       </div>
       <div class=" text-center">
-        <h4 class="text-xl font-semibold my-1"> Lorem ipsum dolor</h4>
-        <p>
-          Lorem ipsum dolor sit amet elit. Voluptatibus, rerum deleniti nemo
-          porro sequi quas, cum nesciunt vitae asperiores architecto est.
-        </p>
+        <h4 class="text-xl font-semibold my-1"> {review.name}</h4>
+        <p>{review.review}</p>
       </div>
     </div>
   );

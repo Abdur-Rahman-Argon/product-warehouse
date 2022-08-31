@@ -14,6 +14,7 @@ import ItemsDetails from "./Components/Pages/Inventories/ItemsDetails";
 import ManageInventories from "./Components/Pages/ManageInventories/ManageInventories";
 import AddNewProduct from "./Components/Pages/AddNewItems/AddNewProduct";
 import MyItems from "./Components/Pages/MyItems/MyItems";
+import About from "./Components/Pages/About/About";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/inventories" element={<Inventories />} />
+        <Route path="/aboutUs" element={<About />} />
 
         <Route
           path="/inventories/:id"

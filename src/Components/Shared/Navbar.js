@@ -32,11 +32,11 @@ const Navbar = () => {
           <li>
             <Link to="/addNewItems"> AddNewItem </Link>
           </li>
-          <li className=" block md:hidden lg:block">
-            <Link to="/Blogs"> Blogs </Link>
-          </li>
         </>
       )}
+      <li className=" block md:hidden lg:block">
+        <Link to="/aboutUs"> AboutUs </Link>
+      </li>
     </>
   );
 

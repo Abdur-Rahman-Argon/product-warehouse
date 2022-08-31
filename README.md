@@ -1,16 +1,15 @@
 # P-Store House
 
-Client-Site [Link](https://github.com/Abdur-Rahman-Argon/product-warehouse-client)
+## Client-Site [Link](https://github.com/Abdur-Rahman-Argon/product-warehouse-client)
 
-Server-Site [Link](https://github.com/Abdur-Rahman-Argon/product-warehouse-server)
+## Server-Site [Link](https://github.com/Abdur-Rahman-Argon/product-warehouse-server)
 
-Live-Site [Live-Link](https://product-store-house.web.app/)
+# Live-Site [Live-Link](https://product-store-house.web.app/)
 
 <!-- #### Project Short Description: -->
 
 ### Some important feature.
 
-- 1st data load from mongoDB and Home and Parts Page.
 - P-Store House is a warehouse website.
 - We store product and Sell Wholesale.
 - User see with out login Home page inventory page and login page.

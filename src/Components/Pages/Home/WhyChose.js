@@ -31,11 +31,12 @@ const WhyChose = () => {
           className=" w-[400px]"
         />
       </div>
-      <div className=" flex-1 py-8 mb-5">
-        <h1 className=" text-5xl font-extrabold text-gray-800">
-          Why Choose Us
-        </h1>
-        {}
+      <div className=" flex-1 py-8 mb-3">
+        <div className=" mb-8">
+          <h1 className=" text-5xl font-extrabold text-gray-800">
+            Why Choose Us
+          </h1>
+        </div>
         <div>
           {question.map((aee) => (
             <Accordion acc={aee}></Accordion>
