@@ -54,7 +54,7 @@ Live-Site [Live-Link](https://product-store-house.web.app/)
 -
 -
 
-### Some user information:
+<!-- ### Some user information:
 
 - User email: User1@gmail.com
 - User password: ThisIsUserOne
@@ -63,23 +63,4 @@ Live-Site [Live-Link](https://product-store-house.web.app/)
 - User password: ThisIsUserTwo
 
 - User email: User3@gmail.com
-- User password: ThisIsUserThree
-
-# Used Framework and Library
-
-- React Library.
-- React TailWind Css
-- Daisy Ui
-- React Router
-- react Query
-- react toastify
-- react stripe
-- React Bootstrap
-
-# ServerSite use
-
-- Node Js
-- express js
-- MongoDb
-- json web token
-- Stripe Js
+- User password: ThisIsUserThree -->
