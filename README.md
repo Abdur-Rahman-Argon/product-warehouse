@@ -1,9 +1,9 @@
 # P-Store House
 
 ## Live-Site [Live-Link](https://product-store-house.web.app/)
-## Client-Site [Link](https://github.com/Abdur-Rahman-Argon/product-warehouse-client)
+## Client-Site-Code [Link](https://github.com/Abdur-Rahman-Argon/product-warehouse-client)
 
-## Server-Site [Link](https://github.com/Abdur-Rahman-Argon/product-warehouse-server)
+## Server-Site-Code [Link](https://github.com/Abdur-Rahman-Argon/product-warehouse-server)
 
 
 
@@ -35,7 +35,6 @@
 - React-firebase-hooks
 - React-Router
 - React-Query
--
 
 ### Server side Technology:
 
@@ -44,15 +43,14 @@
 - DotEnv
 - MongoDB
 - JWT
--
 
 ### Tools and software:
 
 - Firebase (Authentication)
 - GitHub (Code Store)
 - VsCode ( Code editor)
--
--
+- Heroku(server Deploy)
+- image Hosting(image.bb)
 
 <!-- ### Some user information:
 
