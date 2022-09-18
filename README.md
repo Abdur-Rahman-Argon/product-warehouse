@@ -1,13 +1,11 @@
 # P-Store House
 
-## Live-Site [Live-Link](https://product-store-house.web.app/)
-## Client-Site-Code [Link](https://github.com/Abdur-Rahman-Argon/product-warehouse-client)
+### Live-Site [Live-Link](https://product-store-house.web.app/)
+### Client-Site-Code [Link](https://github.com/Abdur-Rahman-Argon/product-warehouse-client)
+### Server-Site-Code [Link](https://github.com/Abdur-Rahman-Argon/product-warehouse-server)
 
-## Server-Site-Code [Link](https://github.com/Abdur-Rahman-Argon/product-warehouse-server)
-
-
-
-<!-- #### Project Short Description: -->
+#### Project Short Description:
+This is a store house website. Here a deler upload his product and show. He wholesell his product and stock update and add new items. User add new his items and also remove his items. He also see his  won items.
 
 ### Some important feature.
 
