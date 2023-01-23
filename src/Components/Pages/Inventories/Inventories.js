@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 // import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import Loading from "../../Shared/Loading";
 import useItems from "../../utilites/useItems";
 import Items from "./../Home/Items";
 import { useQuery } from "react-query";
+import { ITEMS_CONTEXT } from "../../../context/ItemsProvider";
 
 const Inventories = () => {
-  const [AllItems, isLoading, refetch] = useItems();
+  const context = useContext(ITEMS_CONTEXT);
 
-  if (isLoading) {
+  if (context?.state?.isLoading) {
     return <Loading></Loading>;
   }
 
@@ -26,7 +27,7 @@ const Inventories = () => {
         </p>
       </div>
       <div className=" px-5 lg:px-10 my-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {AllItems?.map((item) => (
+        {context?.state?.items?.map((item) => (
           <Items item={item}></Items>
         ))}
       </div>

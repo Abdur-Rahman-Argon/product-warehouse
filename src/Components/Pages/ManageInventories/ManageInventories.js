@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import useItems from "./../../utilites/useItems";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import DeleteConfirm from "../../Shared/DeleteConfirm";
 import Loading from "../../Shared/Loading";
 import { useQuery } from "react-query";
+import { ITEMS_CONTEXT } from "../../../context/ItemsProvider";
 
 const ManageInventories = () => {
-  const [items, isLoading, refetch] = useItems();
+  const context = useContext(ITEMS_CONTEXT);
 
   const [loading, setLoading] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
@@ -15,7 +16,7 @@ const ManageInventories = () => {
   const [deleteId, setDeleteId] = useState();
   const navigate = useNavigate();
 
-  if (loading || isLoading) {
+  if (loading || context?.state?.isLoading) {
     return <Loading></Loading>;
   }
 
@@ -34,15 +35,15 @@ const ManageInventories = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        //  console.log(result);
         if (result.deletedCount === 1) {
           toast.success("Your Information Update Successful!");
           setDeleteModal(false);
           setDeleteConfirm(false);
           setDeleteId("");
-          refetch();
+
           setLoading(false);
-          // navigate("/");
+          window.location.reload();
         }
       });
   }
@@ -72,7 +73,7 @@ const ManageInventories = () => {
           </div>
         </div>
         <div className=" grid grid-cols-1">
-          {items?.map((itm, index) => (
+          {context?.state?.items?.map((itm, index) => (
             <>
               <div className=" flex items-center">
                 <div className="mx-8 font-bold">{index + 1}</div>

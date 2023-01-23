@@ -6,8 +6,13 @@ import OurServices from "./OurServices";
 import { Link } from "react-router-dom";
 
 import WhyChose from "./WhyChose";
+import { useItems } from "../../../context/ItemsProvider";
 
 const Home = () => {
+  const { state } = useItems();
+
+  // console.log(state);
+
   return (
     <div className="">
       <section>

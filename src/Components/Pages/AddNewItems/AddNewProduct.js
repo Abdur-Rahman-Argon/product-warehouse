@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import pic from "./../../../images/image.png";
 // import pic from "./../../../images/image2.jpg";
@@ -7,9 +7,12 @@ import { useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading";
+import { actionTypes } from "../../../state/ProductState/actionTypes";
+import { ITEMS_CONTEXT } from "../../../context/ItemsProvider";
 
 const AddNewProduct = () => {
   const [user] = useAuthState(auth);
+  const { state, dispatch } = useContext(ITEMS_CONTEXT);
 
   const [imgUrl, setImgUrl] = useState(pic);
   const [imageUrl, setImageUrl] = useState();
@@ -22,6 +25,7 @@ const AddNewProduct = () => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
 
   const navigate = useNavigate();
@@ -30,7 +34,7 @@ const AddNewProduct = () => {
     const [file] = e.target.files;
     setImgUrl(URL.createObjectURL(file));
     const image = file;
-    console.log(image);
+    //  console.log(image);
     const formData = new FormData();
     formData.append("image", image);
     setImageData(formData);
@@ -78,8 +82,9 @@ const AddNewProduct = () => {
     }).then((res) =>
       res.json().then((result) => {
         toast.success("Your Information Update Successful!");
-        navigate("/");
+        reset();
         setLoading(false);
+        window.location.reload();
       })
     );
   };

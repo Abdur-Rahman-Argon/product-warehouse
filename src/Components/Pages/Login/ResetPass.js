@@ -29,7 +29,7 @@ const ResetPass = ({ setResetEmail }) => {
   const onSubmit = async (data) => {
     setLoading(true);
     const email = data.email;
-    console.log(data);
+    //  console.log(data);
     // await updatePassword(email);
     await sendPasswordResetEmail(email);
     if (error) {

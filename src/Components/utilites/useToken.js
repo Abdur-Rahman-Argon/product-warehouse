@@ -19,7 +19,7 @@ const useToken = (user) => {
           localStorage.setItem("accessToken", data.accessToken);
           setToken(data.accessToken);
         }
-        console.log(data);
+        //  console.log(data);
       });
   }
 

@@ -4,12 +4,6 @@ import { toast } from "react-toastify";
 import Loading from "../../Shared/Loading";
 
 const Details = ({ itemDetails }) => {
-  const [loading, setLoading] = useState(false);
-  const [nQuantity, setQuantity] = useState(quantity);
-  const [nStock, setStock] = useState(stock);
-  const [nDelivery, setDelivery] = useState(delivery);
-  const { register, handleSubmit, reset } = useForm();
-
   const {
     _id,
     itemsName,
@@ -21,6 +15,12 @@ const Details = ({ itemDetails }) => {
     stock,
     delivery,
   } = itemDetails;
+
+  const [loading, setLoading] = useState(false);
+  const [nQuantity, setQuantity] = useState(quantity);
+  const [nStock, setStock] = useState(stock);
+  const [nDelivery, setDelivery] = useState(delivery);
+  const { register, handleSubmit, reset } = useForm();
 
   // if (loading) {
   //   return <Loading></Loading>;
@@ -34,7 +34,7 @@ const Details = ({ itemDetails }) => {
     const newDelivery = parseFloat(nDelivery) + 1;
     setDelivery(newDelivery);
     const upDelivery = { stock: newStock, delivery: newDelivery };
-    console.log(upDelivery);
+    //  console.log(upDelivery);
 
     fetch(`${process.env.REACT_APP_PRO_URL}/deliveryUpdate/${_id}`, {
       method: "PUT",
@@ -45,7 +45,7 @@ const Details = ({ itemDetails }) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        //  console.log(result);
         if (result.acknowledged) {
           reset();
           toast.success(" product Delivered");
@@ -64,7 +64,7 @@ const Details = ({ itemDetails }) => {
     const newQuantity = parseFloat(nQuantity) + parseFloat(restok);
     setQuantity(newQuantity);
     const upStock = { stock: newStock, quantity: newQuantity };
-    console.log(upStock);
+    //  console.log(upStock);
 
     fetch(`${process.env.REACT_APP_PRO_URL}/stockUpdate/${_id}`, {
       method: "PUT",
@@ -75,7 +75,7 @@ const Details = ({ itemDetails }) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        //  console.log(result);
         if (result.acknowledged) {
           reset();
           toast.success(" Your Stock Updated");
@@ -89,22 +89,22 @@ const Details = ({ itemDetails }) => {
     <div>
       <div className=" my-10 flex flex-col md:flex-row justify-around">
         <div className="flex-1">
-          <img src={image} alt="" className="w-96" />
+          <img src={itemDetails?.image} alt="" className="w-96" />
         </div>
         <div className="flex-1 p-5">
           <div class=" px-2 text-left  ">
-            <h2 class=" text-3xl mb-2 font-bold"> {itemsName}</h2>
+            <h2 class=" text-3xl mb-2 font-bold"> {itemDetails?.itemsName}</h2>
             <h2 class=" text-[15px]">
               <span className="text-[16px] font-bold">Supplier Name: </span>
               <span className=" cursor-pointer font-bold hover:text-blue-500">
-                {supplierName}
+                {itemDetails?.supplierName}
               </span>
             </h2>
 
             <div className=" font-[600] pr-8 my- flex items-center justify-start gap-20">
               <h4 className="my-2">
                 <span className="text-[15px] font-bold"> Price: </span>
-                <span>{price} $</span>
+                <span>{itemDetails?.price} $</span>
               </h4>
               <h4>
                 <span className="text-[15px] font-bold">TotalQuantity: </span>
@@ -125,7 +125,7 @@ const Details = ({ itemDetails }) => {
 
             <p className=" text-left font-medium mb-5">
               <span className=" text-[16px] font-bold">Description: </span>
-              <span className="text-[14px]">{description}</span>
+              <span className="text-[14px]">{itemDetails?.description}</span>
             </p>
           </div>
           <div className=" my-5">

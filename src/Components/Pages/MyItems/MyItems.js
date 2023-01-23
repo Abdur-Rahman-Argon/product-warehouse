@@ -46,7 +46,7 @@ const MyItems = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        //  console.log(result);
         if (result.deletedCount === 1) {
           toast.success("Your items remove Successful!");
           setDeleteModal(false);
@@ -54,6 +54,7 @@ const MyItems = () => {
           setDeleteId("");
           refetch();
           setLoading(false);
+          window.location.reload();
           // navigate("/");
         }
       });
@@ -61,7 +62,7 @@ const MyItems = () => {
 
   return (
     <div className="px-5">
-      {myItems.length > 0 ? (
+      {myItems?.length > 0 ? (
         <>
           <div className=" my-5 heading font-bold text-2xl">
             <h1>
@@ -86,7 +87,7 @@ const MyItems = () => {
         </>
       )}
       <div className=" border-[0] border-b-0 border-t-0 border-gray-600 mb-10">
-        {myItems.length > 0 && (
+        {myItems?.length > 0 && (
           <>
             <div className="py-4 mb-2 bg-slate-700 text-white flex items-center">
               <div className=" mx-5 md:mx-8 font-bold">Si</div>

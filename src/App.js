@@ -15,60 +15,65 @@ import ManageInventories from "./Components/Pages/ManageInventories/ManageInvent
 import AddNewProduct from "./Components/Pages/AddNewItems/AddNewProduct";
 import MyItems from "./Components/Pages/MyItems/MyItems";
 import About from "./Components/Pages/About/About";
+import ItemsProvider from "./context/ItemsProvider";
 
 function App() {
   return (
     <div className="App">
-      <Navbar></Navbar>
+      <ItemsProvider>
+        <div>
+          <Navbar></Navbar>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/inventories" element={<Inventories />} />
-        <Route path="/aboutUs" element={<About />} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/inventories" element={<Inventories />} />
+            <Route path="/aboutUs" element={<About />} />
 
-        <Route
-          path="/inventories/:id"
-          element={
-            <RequireAuth>
-              <ItemsDetails />
-            </RequireAuth>
-          }
-        />
+            <Route
+              path="/inventories/:id"
+              element={
+                <RequireAuth>
+                  <ItemsDetails />
+                </RequireAuth>
+              }
+            />
 
-        <Route
-          path="/ManageInventories"
-          element={
-            <RequireAuth>
-              <ManageInventories />
-            </RequireAuth>
-          }
-        />
+            <Route
+              path="/ManageInventories"
+              element={
+                <RequireAuth>
+                  <ManageInventories />
+                </RequireAuth>
+              }
+            />
 
-        <Route
-          path="/addNewItems"
-          element={
-            <RequireAuth>
-              <AddNewProduct />
-            </RequireAuth>
-          }
-        />
+            <Route
+              path="/addNewItems"
+              element={
+                <RequireAuth>
+                  <AddNewProduct />
+                </RequireAuth>
+              }
+            />
 
-        <Route
-          path="/myItems"
-          element={
-            <RequireAuth>
-              <MyItems />
-            </RequireAuth>
-          }
-        />
+            <Route
+              path="/myItems"
+              element={
+                <RequireAuth>
+                  <MyItems />
+                </RequireAuth>
+              }
+            />
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
 
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer></Footer>
-      <ToastContainer />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer></Footer>
+          <ToastContainer />
+        </div>
+      </ItemsProvider>
     </div>
   );
 }
