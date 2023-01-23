@@ -4,21 +4,12 @@ import { Link } from "react-router-dom";
 import Loading from "../../Shared/Loading";
 import useItems from "../../utilites/useItems";
 import Items from "./../Home/Items";
+import { useQuery } from "react-query";
 
 const Inventories = () => {
-  const [Alltems, loading] = useItems();
+  const [AllItems, isLoading, refetch] = useItems();
 
-  // const [Alltems, isLoading, refetch] = useItems();
-
-  // const {
-  //   data: items,
-  //   isLoading,
-  //   refetch,
-  // } = useQuery("product", () =>
-  //   fetch("https://thawing-crag-90386.herokuapp.com/AllItems").then((res) => res.json())
-  // );
-
-  if (loading) {
+  if (isLoading) {
     return <Loading></Loading>;
   }
 
@@ -35,7 +26,7 @@ const Inventories = () => {
         </p>
       </div>
       <div className=" px-5 lg:px-10 my-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {Alltems?.map((item) => (
+        {AllItems?.map((item) => (
           <Items item={item}></Items>
         ))}
       </div>

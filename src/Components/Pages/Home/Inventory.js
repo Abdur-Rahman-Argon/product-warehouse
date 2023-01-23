@@ -4,10 +4,9 @@ import useItems from "../../utilites/useItems";
 import Items from "./Items";
 
 const Inventory = () => {
-  const [items, loading] = useItems();
-  // const [items, isLoading, refetch] = useItems();
+  const [items, isLoading, refetch] = useItems();
 
-  if (loading) {
+  if (isLoading) {
     return <Loading></Loading>;
   }
 

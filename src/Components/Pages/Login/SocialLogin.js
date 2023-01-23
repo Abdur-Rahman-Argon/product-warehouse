@@ -36,7 +36,7 @@ const SocialLogin = () => {
     //   photoURL,
     // };
     // await console.log(gUser, user);
-    // fetch("https://frozen-retreat-64301.herokuapp.com/user", {
+    // fetch(`${process.env.REACT_APP_PRO_URL}/user`, {
     //   method: "POST",
     //   headers: {
     //     "content-type": "application/json",

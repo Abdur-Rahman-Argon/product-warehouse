@@ -55,9 +55,16 @@ const Navbar = () => {
   );
   return (
     <div class="navbar px-5 md:px-10 lg:px-20  bg-slate-700 text-white ">
-      <div class="flex-1 navbar-start">
+      <div class=" navbar-start">
         <Link to="/" class="">
-          <h1 className="normal-case title-style text-2xl">P-Store House</h1>
+          <div class="flex items-center justify-center gap-2">
+            <img
+              src="https://icon-library.com/images/shop-icon-png/shop-icon-png-6.jpg"
+              alt=""
+              className=" w-5"
+            />{" "}
+            <h1 className=" uppercase font-semibold  text-xl">P-Store House</h1>
+          </div>
         </Link>
       </div>
 

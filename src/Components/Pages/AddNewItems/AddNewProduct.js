@@ -67,7 +67,7 @@ const AddNewProduct = () => {
       });
 
     //--- items data post on data-base
-    const url2 = " https://thawing-crag-90386.herokuapp.com/AllItems";
+    const url2 = `${process.env.REACT_APP_PRO_URL}/AllItems`;
     await fetch(url2, {
       method: "POST",
       headers: {

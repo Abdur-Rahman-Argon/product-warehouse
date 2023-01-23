@@ -5,6 +5,9 @@ import Loading from "../../Shared/Loading";
 
 const Details = ({ itemDetails }) => {
   const [loading, setLoading] = useState(false);
+  const [nQuantity, setQuantity] = useState(quantity);
+  const [nStock, setStock] = useState(stock);
+  const [nDelivery, setDelivery] = useState(delivery);
   const { register, handleSubmit, reset } = useForm();
 
   const {
@@ -18,10 +21,6 @@ const Details = ({ itemDetails }) => {
     stock,
     delivery,
   } = itemDetails;
-
-  const [nQuantity, setQuantity] = useState(quantity);
-  const [nStock, setStock] = useState(stock);
-  const [nDelivery, setDelivery] = useState(delivery);
 
   // if (loading) {
   //   return <Loading></Loading>;
@@ -37,7 +36,7 @@ const Details = ({ itemDetails }) => {
     const upDelivery = { stock: newStock, delivery: newDelivery };
     console.log(upDelivery);
 
-    fetch(`https://thawing-crag-90386.herokuapp.com/deliveryUpdate/${_id}`, {
+    fetch(`${process.env.REACT_APP_PRO_URL}/deliveryUpdate/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -67,7 +66,7 @@ const Details = ({ itemDetails }) => {
     const upStock = { stock: newStock, quantity: newQuantity };
     console.log(upStock);
 
-    fetch(`https://thawing-crag-90386.herokuapp.com/stockUpdate/${_id}`, {
+    fetch(`${process.env.REACT_APP_PRO_URL}/stockUpdate/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

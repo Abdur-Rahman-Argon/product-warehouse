@@ -7,17 +7,7 @@ import Loading from "../../Shared/Loading";
 import { useQuery } from "react-query";
 
 const ManageInventories = () => {
-  // const [items] = useItems();
-
-  const {
-    data: items,
-    isLoading,
-    refetch,
-  } = useQuery("product", () =>
-    fetch("https://thawing-crag-90386.herokuapp.com/AllItems").then((res) =>
-      res.json()
-    )
-  );
+  const [items, isLoading, refetch] = useItems();
 
   const [loading, setLoading] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
@@ -36,7 +26,7 @@ const ManageInventories = () => {
 
   if (deleteConfirm) {
     setLoading(true);
-    fetch(`https://thawing-crag-90386.herokuapp.com/deleteItem/${deleteId}`, {
+    fetch(`${process.env.REACT_APP_PRO_URL}/deleteItem/${deleteId}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",

@@ -22,9 +22,9 @@ const MyItems = () => {
     isLoading,
     refetch,
   } = useQuery("items", () =>
-    fetch(
-      `https://thawing-crag-90386.herokuapp.com/userItems/${user.email}`
-    ).then((res) => res.json())
+    fetch(`${process.env.REACT_APP_PRO_URL}/userItems/${user.email}`).then(
+      (res) => res.json()
+    )
   );
 
   if (ULoading || isLoading || loading) {
@@ -38,7 +38,7 @@ const MyItems = () => {
 
   if (deleteConfirm) {
     setLoading(true);
-    fetch(`https://thawing-crag-90386.herokuapp.com/deleteItem/${deleteId}`, {
+    fetch(`${process.env.REACT_APP_PRO_URL}/deleteItem/${deleteId}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",

@@ -13,14 +13,10 @@ const ItemsDetails = () => {
     isLoading,
     refetch,
   } = useQuery("items", () =>
-    fetch(`https://thawing-crag-90386.herokuapp.com/AllItems/${id}`).then(
-      (res) => res.json()
+    fetch(`${process.env.REACT_APP_PRO_URL}/AllItems/${id}`).then((res) =>
+      res.json()
     )
   );
-
-  // if (id) {
-  //   console.log(id);
-  // }
 
   if (isLoading) {
     return <Loading></Loading>;
